@@ -1,0 +1,121 @@
+these are my solutions to gfg challenge questions:
+
+1. Nearest Perfect Square:
+
+	using namespace std; 
+    bool isPerfect(long long N) 
+    { 
+        if ((sqrt(N) - floor(sqrt(N))) != 0) 
+            return false; 
+        return true; 
+    } 
+    void getClosestPerfectSquare(long long N) 
+    { 
+        long long aboveN = -1, belowN = -1; 
+        long long n1;
+        if(!isPerfect(N)){
+            n1=sqrt(N);
+            belowN=n1*n1;
+        }
+        if(isPerfect(N)){
+           n1=sqrt(N)-1;
+            belowN=(n1*n1);
+        }
+        n1=sqrt(N)+1;
+        aboveN=(n1*n1);
+        int diff1 = aboveN - N; 
+        int diff2 = N - belowN; 
+        if (diff1 > diff2) 
+            cout<<belowN<<"\n"; 
+        else
+            cout<<aboveN<<"\n"; 
+    }
+    int main() 
+    { 
+      long long t, n;
+      cin>>t;
+      while(t--)
+        {
+            cin>>n;
+            getClosestPerfectSquare(n); 
+            
+        }
+    }
+
+
+Get the shadow:
+	
+
+
+using namespace std; 
+
+void printTwoElements(int arr[], int size) 
+{ 
+	int i; 
+	for (i = 0; i < size; i++) { 
+		if (arr[abs(arr[i]) - 1] > 0) 
+			arr[abs(arr[i]) - 1] = -arr[abs(arr[i]) - 1]; 
+		else
+			cout << abs(arr[i]) << " "; 
+	} 
+	for (i = 0; i < size; i++) { 
+		if (arr[i] > 0) 
+			cout << (i + 1)<<"\n"; 
+	} 
+} 
+int main() 
+{ 
+	int t,m;
+	cin>>t;
+	while(t--)
+	{
+	    
+	    cin>>m;
+	    int arr[m];
+	    for(int i=0;i<m;i++){
+	        cin>>arr[i];
+	    }
+	    
+	    printTwoElements(arr, m);
+	    
+	} 
+}  
+
+
+The Conversion To One:
+
+
+
+using namespace std; 
+
+void printTwoElements(int arr[], int size) 
+{ 
+	int i; 
+	for (i = 0; i < size; i++) { 
+		if (arr[abs(arr[i]) - 1] > 0) 
+			arr[abs(arr[i]) - 1] = -arr[abs(arr[i]) - 1]; 
+		else
+			cout << abs(arr[i]) << " "; 
+	} 
+	for (i = 0; i < size; i++) { 
+		if (arr[i] > 0) 
+			cout << (i + 1)<<"\n"; 
+	} 
+} 
+int main() 
+{ 
+	int t,m;
+	cin>>t;
+	while(t--)
+	{
+	    
+	    cin>>m;
+	    int arr[m];
+	    for(int i=0;i<m;i++){
+	        cin>>arr[i];
+	    }
+	    
+	    printTwoElements(arr, m);
+	    
+	} 
+} 
